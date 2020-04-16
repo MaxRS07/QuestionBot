@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wVz-LV-Rjr">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Jbv-6y-k1f">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="wVz-LV-Rjr" customClass="ViewController" customModule="QuestionBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bSZ-fy-bZY"/>
+                        <viewControllerLayoutGuide type="bottom" id="YvZ-xJ-Xsa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xrx-PO-oO0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-aH-lRt">
+                                <rect key="frame" x="5" y="44" width="404" height="214"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-cR-DwP">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="🤖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M6-Xt-ysQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TF7-r3-cfe">
+                                                <rect key="frame" x="59" y="9.5" width="345" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="6ax-cG-Val"/>
+                                                </constraints>
+                                                <string key="text">Hello Human, I'm QuestionBot.
+Ask me a question.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type your question..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ob-1A-5xc">
+                                        <rect key="frame" x="0.0" y="65" width="404" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="G6Z-qF-kz1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="editingChanged:" destination="wVz-LV-Rjr" eventType="editingChanged" id="hQe-TD-vXL"/>
+                                            <outlet property="delegate" destination="wVz-LV-Rjr" id="8p2-zE-5b2"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOk-EP-Q9a">
+                                        <rect key="frame" x="0.0" y="170" width="404" height="44"/>
+                                        <color key="backgroundColor" red="0.44129186869999998" green="0.64658468960000004" blue="0.87062031029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="vHD-Sh-HRm"/>
+                                        </constraints>
+                                        <state key="normal" title="Ask">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="askButtonTapped:" destination="wVz-LV-Rjr" eventType="touchUpInside" id="2bL-DB-EKD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9Gu-aH-lRt" secondAttribute="trailing" constant="5" id="G0F-Pq-SxH"/>
+                            <constraint firstItem="9Gu-aH-lRt" firstAttribute="leading" secondItem="Xrx-PO-oO0" secondAttribute="leading" constant="5" id="ngq-dm-mhQ"/>
+                            <constraint firstItem="9Gu-aH-lRt" firstAttribute="top" secondItem="bSZ-fy-bZY" secondAttribute="bottom" id="q4t-WE-oCK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dlr-yR-KnP"/>
                     </view>
+                    <connections>
+                        <outlet property="askButton" destination="SOk-EP-Q9a" id="Giz-q5-vmd"/>
+                        <outlet property="questionField" destination="8Ob-1A-5xc" id="Vda-W6-k92"/>
+                        <outlet property="responseLabel" destination="TF7-r3-cfe" id="Gyr-JD-DHA"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ot7-A5-blb" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="303" y="339"/>
         </scene>
     </scenes>
 </document>
