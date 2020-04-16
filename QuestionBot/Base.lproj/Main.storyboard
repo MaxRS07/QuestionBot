@@ -62,9 +62,10 @@ Ask me a question.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="vHD-Sh-HRm"/>
                                         </constraints>
-                                        <state key="normal" title="Ask">
+                                        <state key="normal" title="Ask" backgroundImage="enabled">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <state key="disabled" backgroundImage="disabled"/>
                                         <connections>
                                             <action selector="askButtonTapped:" destination="wVz-LV-Rjr" eventType="touchUpInside" id="2bL-DB-EKD"/>
                                         </connections>
@@ -91,4 +92,8 @@ Ask me a question.</string>
             <point key="canvasLocation" x="303" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="disabled" width="13.5" height="13.5"/>
+        <image name="enabled" width="13" height="13"/>
+    </resources>
 </document>
