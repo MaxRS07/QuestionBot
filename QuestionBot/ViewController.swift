@@ -11,12 +11,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionField.becomeFirstResponder()
+        responseLabel.numberOfLines = Int.max
     }
-
     func respondToQuestion(_ question: String) {
-        let answer = questionAnswerer.responseTo(question: question)
-
-        displayAnswerTextOnScreen(answer)
+        responseLabel.text = "Waiting..."
+        let _ = questionAnswerer.responseTo(question: question) { [self] answer in
+            DispatchQueue.main.async { [self] in
+                responseLabel.text = answer
+                responseLabel.numberOfLines = 0
+                responseLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+                responseLabel.font = responseLabel.font
+                responseLabel.sizeToFit()
+            }
+        }
         questionField.placeholder = "Ask another question..."
         questionField.text = nil
         askButton.isEnabled = false
@@ -28,11 +35,6 @@ class ViewController: UIViewController {
         }
         questionField.resignFirstResponder()
     }
-    
-    func displayAnswerTextOnScreen(_ answer: String) {
-        responseLabel.text = answer
-    }
-
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -58,4 +60,14 @@ extension ViewController: UITextFieldDelegate {
         
         askButton.isEnabled = !text.isEmpty
     }
+    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+       let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.greatestFiniteMagnitude))
+       label.numberOfLines = 0
+       label.lineBreakMode = NSLineBreakMode.byWordWrapping
+       label.font = font
+       label.text = text
+
+       label.sizeToFit()
+       return label.frame.height
+   }
 }

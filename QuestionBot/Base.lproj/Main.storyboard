@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wVz-LV-Rjr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wVz-LV-Rjr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-aH-lRt">
-                                <rect key="frame" x="5" y="44" width="404" height="214"/>
+                                <rect key="frame" x="5" y="48" width="404" height="214"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e3H-cR-DwP">
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="60"/>
@@ -56,7 +57,7 @@ Ask me a question.</string>
                                             <outlet property="delegate" destination="wVz-LV-Rjr" id="8p2-zE-5b2"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOk-EP-Q9a">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOk-EP-Q9a">
                                         <rect key="frame" x="0.0" y="170" width="404" height="44"/>
                                         <color key="backgroundColor" red="0.44129186869999998" green="0.64658468960000004" blue="0.87062031029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -72,14 +73,42 @@ Ask me a question.</string>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pro tip: Use Weather and a location to get the weather" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH0-dr-QyL">
+                                <rect key="frame" x="106" y="334" width="203" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pro tip 2: ask any question but also dont include the words: &quot;weather&quot;, &quot;temperature&quot;, &quot;feel&quot;, &quot;min&quot; or &quot;max&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhi-sp-pch">
+                                <rect key="frame" x="69" y="476" width="276" height="239"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eg. &quot;how is the weather in cambodia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60f-Pe-TcC">
+                                <rect key="frame" x="69" y="441" width="276" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pro tip 3: the text overflows and i have no idea how to make the textbox bigger so you responses get cut off 50% of the time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfK-m7-vZj">
+                                <rect key="frame" x="30" y="694" width="355" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dlr-yR-KnP"/>
                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9Gu-aH-lRt" secondAttribute="trailing" constant="5" id="G0F-Pq-SxH"/>
                             <constraint firstItem="9Gu-aH-lRt" firstAttribute="leading" secondItem="Xrx-PO-oO0" secondAttribute="leading" constant="5" id="ngq-dm-mhQ"/>
                             <constraint firstItem="9Gu-aH-lRt" firstAttribute="top" secondItem="bSZ-fy-bZY" secondAttribute="bottom" id="q4t-WE-oCK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Dlr-yR-KnP"/>
                     </view>
                     <connections>
                         <outlet property="askButton" destination="SOk-EP-Q9a" id="Giz-q5-vmd"/>
@@ -89,7 +118,7 @@ Ask me a question.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ot7-A5-blb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="339"/>
+            <point key="canvasLocation" x="302.89855072463769" y="338.83928571428572"/>
         </scene>
     </scenes>
     <resources>
